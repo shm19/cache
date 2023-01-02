@@ -1,9 +1,10 @@
-import express from "express";
+import express from 'express';
 
+import apiRouter from './routes/apiRotues';
 const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => res.send("hello world"));
+app.use(apiRouter);
 
 export default app;
