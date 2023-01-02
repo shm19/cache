@@ -1,0 +1,26 @@
+### get all users
+GET http://localhost:3000/users
+
+### create new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name":"john",
+  "email":"john@gmail.com",
+  "password":"password"
+}
+
+### getOne user
+Get http://localhost:3000/users/63b30e08da288b8ad33d8b42
+
+### update user
+PATCH  http://localhost:3000/users/63b31039b64c008d020998c0
+Content-Type: application/json
+
+{
+  "password":"test"
+}
+
+### remove todo
+DELETE http://localhost:3000/users/63b30dac2d29fb4c23071a7d
