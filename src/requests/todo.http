@@ -1,0 +1,25 @@
+### get all todos
+GET http://localhost:3000/todos
+
+### create new todo
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "title":"title",
+  "description":"this is a description"
+}
+
+### getOne todo
+Get http://localhost:3000/todos/63b2d05d6ffcd5a405803cd2
+
+### update todo
+PATCH  http://localhost:3000/todos/63b2d05d6ffcd5a405803cd2
+Content-Type: application/json
+
+{
+  "title":"update title"
+}
+
+### remove todo
+DELETE http://localhost:3000/todos/63b2cb40b605dd6a59602368
