@@ -1,9 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
+import { AppError, CommonErrors } from '../utils/AppError';
 
 export const joiValidate =
   (validator: Function) =>
-  (req: Request, res: Response, next: NextFunction) => {
+  (req: Request, _res: Response, next: NextFunction) => {
     const { error } = validator(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    next(
+      new AppError(
+        error.details[0].message,
+        CommonErrors[CommonErrors.JOI_VALIDATION],
+        400
+      )
+    );
     next();
   };
