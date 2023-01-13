@@ -12,7 +12,7 @@ const todoSchema = new mongoose.Schema({
   },
 });
 
-export interface Todo extends mongoose.Document {
+export interface Todo {
   title: string;
   description: string;
 }
