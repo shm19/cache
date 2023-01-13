@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { TodoModel } from '../models';
+import HttpStatusCode from '../utils/HttpStatusCode';
 
 export const createTodo = async (req: Request, res: Response) => {
   const { body } = req;
@@ -7,7 +8,7 @@ export const createTodo = async (req: Request, res: Response) => {
     title: body.title,
     description: body.description,
   });
-  res.json({
+  res.status(HttpStatusCode.CREATED).json({
     status: 'sucess',
     data: {
       todo,
