@@ -3,7 +3,22 @@ import pino from 'pino';
 
 const logger = pino({
   transport: {
-    target: 'pino-pretty',
+    targets: [
+      {
+        level: 'info',
+        target: 'pino-pretty',
+        options: {
+          colorize: true,
+        },
+      },
+      {
+        level: 'error',
+        target: 'pino/file',
+        options: {
+          destination: './logs/error.log',
+        },
+      },
+    ],
   },
 });
 
