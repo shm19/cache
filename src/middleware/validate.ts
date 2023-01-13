@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError, CommonErrors } from '../utils/AppError';
+import HttpStatusCode from '../utils/HttpStatusCode';
 
 export const joiValidate =
   (validator: Function) =>
@@ -9,7 +10,7 @@ export const joiValidate =
       new AppError(
         error.details[0].message,
         CommonErrors[CommonErrors.JOI_VALIDATION],
-        400
+        HttpStatusCode.BAD_REQUEST
       )
     );
     next();

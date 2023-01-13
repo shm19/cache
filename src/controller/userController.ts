@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Response, Request } from 'express';
 import { UserModel } from '../models';
 
 export const createUser = async (req: Request, res: Response) => {
@@ -20,6 +20,8 @@ export const createUser = async (req: Request, res: Response) => {
 
 export const getAllUsers = async (req: Request, res: Response) => {
   const users = await UserModel.find();
+
+  req.logger.info('Get all users');
 
   res.json({
     status: 'sucess',
