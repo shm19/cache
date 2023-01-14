@@ -1,8 +1,0 @@
-name: issue
-on: issues
-jobs:
-  issue:
-    runs-on: ubuntu-latest
-    steps:
-      - name: output issue
-        run: echo ${{ github.event.issue.body }}
