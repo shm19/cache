@@ -2,8 +2,6 @@ import config from 'config';
 import mongoose from 'mongoose';
 import { afterAll, beforeAll, beforeEach } from 'vitest';
 
-const mongoUrl = process.env.MONGO_TEST_URL;
-
 const setupTestDB = () => {
   beforeAll(async () => {
     mongoose.set('strictQuery', false);
