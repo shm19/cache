@@ -1,0 +1,13 @@
+# github workflow
+name: Test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: npm test
