@@ -1,21 +1,23 @@
+@url = http://localhost:8080
+@userId = 63b30e08da288b8ad33d8b42
 ### get all users
-GET http://localhost:3000/users
+GET {{url}}/users
 
 ### create new user
-POST http://localhost:3000/users
+POST {{url}}/users
 Content-Type: application/json
 
 {
-  "name":"j",
+  "name":"james",
   "email":"john@gmail.com",
   "password":"password"
 }
 
 ### getOne user
-Get http://localhost:3000/users/63b30e08da288b8ad33d8b42
+Get {{url}}/users/{{userId}}
 
 ### update user
-PATCH  http://localhost:3000/users/63b31039b64c008d020998c0
+PATCH {{url}}/users/{{userId}}
 Content-Type: application/json
 
 {
@@ -23,4 +25,4 @@ Content-Type: application/json
 }
 
 ### remove user
-DELETE http://localhost:3000/users/63b30dac2d29fb4c23071a7d
+DELETE {{url}}/users/{{userId}}

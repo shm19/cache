@@ -1,20 +1,23 @@
+@url = http://localhost:8080
+@_todoId = 63b2d05d6ffcd5a405803cd2
+
 ### get all todos
-GET http://localhost:3000/todos
+GET {{url}}/todos
 
 ### create new todo
-POST http://localhost:3000/todos
+POST {{url}}/todos
 Content-Type: application/json
 
 {
-  "title":"t",
+  "title":"todo",
   "description":"this is a description"
 }
 
 ### getOne todo
-Get http://localhost:3000/todos/63b2d05d6ffcd5a405803cd2
+Get {{url}}/todos/{{_todoId}}
 
 ### update todo
-PATCH  http://localhost:3000/todos/63b2d05d6ffcd5a405803cd2
+PATCH  {{url}}/todos/{{_todoId}}
 Content-Type: application/json
 
 {
@@ -22,4 +25,4 @@ Content-Type: application/json
 }
 
 ### remove todo
-DELETE http://localhost:3000/todos/63b2cb40b605dd6a59602368
+DELETE {{url}}/todos/{{_todoId}}
