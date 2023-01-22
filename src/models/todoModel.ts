@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
 import Joi from 'joi';
 
-const todoSchema = new mongoose.Schema({
+export interface Todo {
+  title: string;
+  description: string;
+}
+
+const todoSchema = new mongoose.Schema<Todo>({
   title: {
     type: String,
     required: [true, 'todo needs title'],
@@ -11,11 +16,6 @@ const todoSchema = new mongoose.Schema({
     required: [true, 'todo needs description'],
   },
 });
-
-export interface Todo {
-  title: string;
-  description: string;
-}
 
 export const validateTodo = (todo: Todo): Joi.ValidationResult => {
   const schema = Joi.object({
