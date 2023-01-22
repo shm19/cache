@@ -2,6 +2,7 @@
 import config from 'config';
 import mongoose from 'mongoose';
 import app from './src';
+require('./src/services/cache');
 
 mongoose.set('strictQuery', false);
 mongoose.connect(config.get('db'));

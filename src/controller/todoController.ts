@@ -17,7 +17,7 @@ export const createTodo = async (req: Request, res: Response) => {
 };
 
 export const getAllTodos = async (req: Request, res: Response) => {
-  const todos = await TodoModel.find();
+  const todos = await TodoModel.find().cache();
   res.json({
     status: 'sucess',
     result: todos.length,
