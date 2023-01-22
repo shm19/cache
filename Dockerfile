@@ -1,7 +1,9 @@
 FROM node:19-alpine
 WORKDIR /usr/app
-COPY package*.json ./
+COPY tsconfig.json ./
+COPY package.json ./
+COPY src ./src
 RUN npm install
-COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
+RUN npm run build
+EXPOSE 8080
+CMD ["npm","run","start:prod"]
