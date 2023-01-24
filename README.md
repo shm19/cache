@@ -1,3 +1,13 @@
 # cache
 
-### This is gonna be a simple todo app with typescript
+### Simple todo with caching using
+
+- node
+- express
+- typescript
+- pino
+- vitest
+- mongodb
+- redis
+- docker
+- docker-compose
